@@ -1,0 +1,93 @@
+@import "../utilities/mixins"
+
+// Dropdown
+$dropdown-menu-min-width: 12rem !default
+
+$dropdown-display: inherit // inline-flex
+
+// Dropdown Content
+$dropdown-content-background-color: $scheme-main !default
+$dropdown-content-offset: 4px !default
+$dropdown-content-padding-bottom: 0.5rem !default
+$dropdown-content-padding-top: 0.5rem !default
+$dropdown-content-radius: $radius !default
+$dropdown-content-shadow: $shadow !default
+$dropdown-content-z: 20 !default
+
+$dropdown-content-position: absolute
+$dropdown-content-width: 100%
+$dropdown-content-z-index: 1
+
+// Dropdown Item
+$dropdown-item-color: $text !default
+
+// Dropdown Divider
+$dropdown-divider-background-color: $border-light !default
+
+// Dropdown Columns
+$dropdown-columns-width: inherit
+
+// Dropdown Column
+$dropdown-column-width: inherit
+
+// Dropdown Title, Subtitle
+$dropdown-overflow: hidden
+$dropdown-text-overflow: ellipsis
+
+.dropdown
+  display: $dropdown-display
+  position: relative
+  vertical-align: top
+
+.dropdown-menu
+  display: none
+  +ltr-position(0, false)
+  min-width: $dropdown-menu-min-width
+  padding-top: $dropdown-content-offset
+  position: absolute
+  top: 100%
+  z-index: $dropdown-content-z
+
+.dropdown-content
+  background-color: $dropdown-content-background-color
+  border-radius: $dropdown-content-radius
+  box-shadow: $dropdown-content-shadow
+  padding-bottom: $dropdown-content-padding-bottom
+  padding-top: $dropdown-content-padding-top
+  
+  position: $dropdown-content-position
+  width: $dropdown-content-width
+  z-index: $dropdown-content-z-index
+
+.dropdown-item
+  color: $dropdown-item-color
+  display: block
+  font-size: 0.875rem
+  line-height: 1.5
+  padding: 0.375rem 1rem
+  position: relative
+
+a.dropdown-item,
+button.dropdown-item
+  +ltr-property("padding", 3rem)
+  text-align: inherit
+  white-space: nowrap
+  width: 100%
+
+.dropdown-divider
+  background-color: $dropdown-divider-background-color
+  border: none
+  display: block
+  height: 1px
+  margin: 0.5rem 0
+
+.dropdown-columns
+  width: $dropdown-columns-width
+
+.dropdown-column
+  width: $dropdown-column-width
+
+.dropdown-title,
+.dropdown-subtitle
+  overflow: $dropdown-overflow
+  text-overflow: $dropdown-text-overflow
