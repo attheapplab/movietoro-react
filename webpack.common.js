@@ -1,4 +1,5 @@
 const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -50,6 +51,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'CNAME' },
+      ],
     }),
     new MiniCssExtractPlugin({
       // https://webpack.js.org/plugins/mini-css-extract-plugin/#filename
