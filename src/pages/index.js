@@ -43,7 +43,7 @@ function App() {
 
   const getHome = () => {
     apis('home').get().all().then(response => {
-      // console.log('Get home.', response)
+      console.log('Get home.', response)
       setFavorites([ ...response ])
     }).catch(status => {
     })
@@ -124,7 +124,7 @@ const favoriteArticles =
           { favorite.asset.name }
         </h2>
         <p>
-          <strong>{ favorite.user.name }</strong> { favorite.count ? "+" + favorite.count : null }
+          <strong>{ favorite.user.username }</strong> { favorite.count ? "+" + favorite.count : null }
         </p>
       </article>
     ) }

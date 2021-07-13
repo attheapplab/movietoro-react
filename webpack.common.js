@@ -4,14 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  // It is possible to provide different types of files to achieve separate bundles for CSS and JavaScript.
-  // https://webpack.js.org/guides/entry-advanced/
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'docs'),
-    host: '0.0.0.0',
-    writeToDisk: true,
-  },
   entry: {
     index: ['./src/pages/index.js'],
     profile: ['./src/pages/profile.js'],
@@ -84,6 +76,6 @@ module.exports = {
     // https://webpack.js.org/guides/asset-modules/#custom-output-filename
     assetModuleFilename: '[file]',
     filename: 'js/[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
   },
 }
