@@ -43,7 +43,7 @@ function App() {
 
   const getHome = () => {
     apis('home').get().all().then(response => {
-      console.log('Get home.', response)
+      // console.log('Get home.', response)
       setFavorites([ ...response ])
     }).catch(status => {
     })
